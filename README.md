@@ -68,7 +68,7 @@ as the `git` user credentials, e.g.:
 
 ## OS X Defaults
 
-My favorite part of this repo is the [set-defaults](.macos) script for OS X.
+My favorite part of this repo is the [.macos](.macos) script for OS X.
 
 ## Resources
 
