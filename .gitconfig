@@ -51,6 +51,8 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
+	editor = 'nano'
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -79,7 +81,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	#gpgsign = true
+	gpgsign = true
 
 [diff]
 
@@ -107,3 +109,9 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
