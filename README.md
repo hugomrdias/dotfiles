@@ -54,7 +54,7 @@ etc.
 #### `~/.gitconfig.local`
 
 If the `~/.gitconfig.local` file exists, it will be automatically
-included after the configurations from [`~/.gitconfig`](git/gitconfig), thus, allowing
+included after the configurations from [`~/.gitconfig`](.gitconfig), thus, allowing
 its content to overwrite or add to the existing `git` configurations.
 
 **Note:** Use `~/.gitconfig.local` to store sensitive information such
@@ -74,6 +74,7 @@ My favorite part of this repo is the [.macos](.macos) script for OS X.
 
 I actively watch the following repositories and add the best changes to this repository:
 
+-   [Setup Git GPG auto sign](https://gist.github.com/hugomrdias/0092a533d7bd87cadd0647f1985d6ca5)
 -   [GitHub ❤ ~/](http://dotfiles.github.com/)
 -   [Nick Plekhanov dotfiles](https://github.com/nicksp/dotfiles)
 -   [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
