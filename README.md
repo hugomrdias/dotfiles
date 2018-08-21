@@ -64,7 +64,7 @@ as the `git` user credentials, e.g.:
 [user]
   name = Hugo Dias
   email = john@example.com
-  signingkey = GPGID
+  signingkey = GPGIDsss
 ```
 
 ## OS X Defaults
