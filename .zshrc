@@ -5,25 +5,38 @@ export PATH
 
 export ZSH=~/.oh-my-zsh
 
-SPACESHIP_TIME_SHOW=false
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_PACKAGE_SYMBOL="📦"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git z yarn npm brew node vagrant)
 
 source $ZSH/oh-my-zsh.sh
-# source "/home/hugomrdias/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# Source local extra (private) settings specific to machine if it exists
+[ -f ~/.zsh.local ] && source ~/.zsh.local
+
+# In order for gpg to find gpg-agent, gpg-agent must be running, and there must be an env
+# variable pointing GPG to the gpg-agent socket. This little script, which must be sourced
+# in your shell's init script (ie, .bash_profile, .zshrc, whatever), will either start
+# gpg-agent or set up the GPG_AGENT_INFO variable if it's already running.
+
+# Add the following to your shell init to set up gpg-agent automatically for every shell
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
 
 # EXPORTS
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nano'
 else
     export EDITOR='code'
 fi
+
+export GPG_TTY=$(tty)
 
 # ALIASES
 
@@ -82,3 +95,16 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Custom alias
+alias ipfs-local='/Users/hugomrdias/code/pl/js-ipfs/src/cli/bin.js'
+
+source #{HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt pure
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

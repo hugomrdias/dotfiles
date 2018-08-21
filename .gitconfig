@@ -19,9 +19,9 @@
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 [user]
+
 	email = hugomrdias@gmail.com
 	name = Hugo Dias
-
 
 [apply]
 
@@ -103,6 +103,9 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+[fetch]
+    prune = true
+
 [push]
 
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
@@ -115,3 +118,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[include]
+
+	path = ~/.gitconfig.local

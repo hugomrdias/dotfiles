@@ -154,6 +154,7 @@ declare -a FILES_TO_SYMLINK=(
     '.gitignore'
     '.hushlogin'
     '.macos'
+    '.hyper.js'
     'Brewfile'
     
 )

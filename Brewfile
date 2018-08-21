@@ -21,14 +21,18 @@ brew "bash-completion2"
 brew "brew-cask-completion"
 brew "git"
 brew "git-extras"
+brew "gnupg"
+brew "pinentry-mac"
 brew "grep"
 # brew "openssh"
 brew "screen"
+brew "htop"
 brew "nano"
 brew "gnupg"
 brew "tree"
 brew "zopfli"
 brew "node"
+brew "yarn"
 brew "ncdu" # find where your diskspace went
 brew "terminal-notifier"
 brew "rename"
@@ -61,9 +65,9 @@ cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'vlc'
 cask "whatsapp"
-cask "discord"
 cask "zoomus"
 cask "teamviewer"
+cask "hyper"
 # Fonts
 cask "font-fira-code"
 cask "font-fira-mono"
@@ -82,4 +86,4 @@ cask "suspicious-package"
 cask "quicklookase" 
 cask "qlvideo"
 # App Store apps
-mas "Trello", id: 1278508951
+# mas "Trello", id: 1278508951

@@ -63,7 +63,7 @@ fi;
 
 sudo easy_install -U Pygments
 
-npm install -g spaceship-prompt gulp-cli trash-cli
+yarn global add pure-prompt gulp-cli trash-cli serve yo
 
 print_success "done"
 
