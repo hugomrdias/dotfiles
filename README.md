@@ -6,13 +6,13 @@ The setup script is smart enough to back up your existing dotfiles into a `~/dot
 
 ## Features
 
-*   Handy [binary scripts](bin/)
-*   Git aliases
-*   zsh aliases
-*   Brewfile
-*   Sensible [OS X defaults](.macos)
-*   [Install script](install.sh) to install everything brew, npm, etc..
-*   [Setup script](setup.sh)
+-   Handy [binary scripts](bin/)
+-   Git aliases
+-   zsh aliases
+-   Brewfile
+-   Sensible [OS X defaults](.macos)
+-   [Install script](install.sh) to install everything brew, npm, etc..
+-   [Setup script](setup.sh)
 
 ## Installation
 
@@ -64,6 +64,7 @@ as the `git` user credentials, e.g.:
 [user]
   name = Hugo Dias
   email = john@example.com
+  signingkey = GPGID
 ```
 
 ## OS X Defaults
@@ -74,13 +75,13 @@ My favorite part of this repo is the [.macos](.macos) script for OS X.
 
 I actively watch the following repositories and add the best changes to this repository:
 
-*   [GitHub ❤ ~/](http://dotfiles.github.com/)
-*   [Nick Plekhanov dotfiles](https://github.com/nicksp/dotfiles)
-*   [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
-*   [Nicolas Gallagher’s dotfiles](https://github.com/necolas/dotfiles)
-*   [Cătălin’s dotfiles](https://github.com/alrra/dotfiles)
-*   [Paul's dotfiles](https://github.com/paulirish/dotfiles)
-*   [Jacob Gillespie’s dotfiles](https://github.com/jacobwg/dotfiles)
+-   [GitHub ❤ ~/](http://dotfiles.github.com/)
+-   [Nick Plekhanov dotfiles](https://github.com/nicksp/dotfiles)
+-   [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
+-   [Nicolas Gallagher’s dotfiles](https://github.com/necolas/dotfiles)
+-   [Cătălin’s dotfiles](https://github.com/alrra/dotfiles)
+-   [Paul's dotfiles](https://github.com/paulirish/dotfiles)
+-   [Jacob Gillespie’s dotfiles](https://github.com/jacobwg/dotfiles)
 
 ## License
 
