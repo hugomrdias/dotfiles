@@ -37,7 +37,7 @@ Or, using wget:
 sh -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/hugomrdias/dotfiles/master/remote-setup.sh`"
 ```
 
-## Customize
+## Customize ddd
 
 ### Local Settings
 
