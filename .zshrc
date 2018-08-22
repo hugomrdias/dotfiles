@@ -84,7 +84,8 @@ alias path='echo -e ${PATH//:/\\n}'
 # Custom alias
 alias ipfs-local='/Users/hugomrdias/code/pl/js-ipfs/src/cli/bin.js'
 
-source #{HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# To be able to install zsh-syntax-highlighting with brew this is needed
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit

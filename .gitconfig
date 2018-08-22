@@ -83,6 +83,10 @@
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
 
+[gpg]
+
+    program=gpg
+
 [diff]
 
 	# Detect copies as well as renames
@@ -104,6 +108,7 @@
 	log = true
 
 [fetch]
+
     prune = true
 
 [push]
@@ -114,6 +119,7 @@
 	followTags = true
 
 [filter "lfs"]
+
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
