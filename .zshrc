@@ -86,6 +86,7 @@ alias ipfs-local='/Users/hugomrdias/code/pl/js-ipfs/src/cli/bin.js'
 
 # To be able to install zsh-syntax-highlighting with brew this is needed
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
