@@ -26,7 +26,7 @@ fi
 # ALIASES
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; mas upgrade; brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm install npm -g; npm update -g'
+alias update='sudo softwareupdate -i -a; mas upgrade; brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew prune; brew doctor; npm install npm -g; npm update -g'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
