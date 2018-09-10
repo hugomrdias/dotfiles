@@ -61,9 +61,7 @@ if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
     chsh -s /usr/local/bin/zsh;
 fi;
 
-sudo easy_install -U Pygments
-
-yarn global add pure-prompt gulp-cli trash-cli serve yo
+yarn global add pure-prompt gulp-cli trash-cli serve yo tldr
 
 print_success "done"
 

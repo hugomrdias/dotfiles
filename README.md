@@ -82,6 +82,7 @@ I actively watch the following repositories and add the best changes to this rep
 -   [Cătălin’s dotfiles](https://github.com/alrra/dotfiles)
 -   [Paul's dotfiles](https://github.com/paulirish/dotfiles)
 -   [Jacob Gillespie’s dotfiles](https://github.com/jacobwg/dotfiles)
+-   [remy's cli improved](https://remysharp.com/2018/08/23/cli-improved)
 
 ## License
 

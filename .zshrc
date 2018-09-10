@@ -69,8 +69,27 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias sshconfig="$EDITOR ~/.ssh/config"
 alias hosts="sudo $EDITOR /etc/hosts"
 alias dig="dig +nocmd any +multiline +noall +answer"
-# `cat` with beautiful colors. requires Pygments installed. c
-alias c='pygmentize -O style=monokai -f console256 -g'
+
+# better cat
+alias cat='bat'
+
+# wrap git with hub https://github.com/github/hub
+alias git=hub
+
+## better ping 
+alias ping='prettyping --nolegend'
+
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+# add support for ctrl+o to open selected file in VS Code
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
+# better du
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+alias grep=rg
+
+alias tldr=man
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -95,3 +114,4 @@ prompt pure
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
