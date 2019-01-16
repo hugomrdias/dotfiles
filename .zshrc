@@ -26,7 +26,7 @@ fi
 # ALIASES
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; mas upgrade; brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew prune; brew doctor; npm install npm -g; npm update -g'
+alias update='sudo softwareupdate -i -a; mas upgrade; brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor; yarn global upgrade --latest -s'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -99,6 +99,9 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# npm linked packages
+alias npm-links='npm ls -g --depth=0 --link=true'
 
 # Custom alias
 alias ipfs-local='/Users/hugomrdias/code/pl/js-ipfs/src/cli/bin.js'
