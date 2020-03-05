@@ -70,7 +70,7 @@ as the `git` user credentials, e.g.:
 
 My favorite part of this repo is the [.macos](.macos) script for OS X.
 
-## Resources
+## Resources 
 
 I actively watch the following repositories and add the best changes to this repository:
 
