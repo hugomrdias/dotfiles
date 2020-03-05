@@ -16,8 +16,6 @@ ask_for_sudo() {
     
 }
 
-
-
 print_info() {
     # Print output in purple
     printf "\n\e[0;35m $1\e[0m\n\n"
@@ -35,7 +33,7 @@ ask_for_sudo
 # Install if we don't have it
 if test ! $(which brew); then
     print_info "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     print_success "done"
 fi
 
@@ -61,7 +59,7 @@ if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
     chsh -s /usr/local/bin/zsh;
 fi;
 
-yarn global add pure-prompt gulp-cli trash-cli serve yo tldr
+yarn global add pure-prompt trash-cli serve yo tldr
 
 print_success "done"
 

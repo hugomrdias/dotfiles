@@ -1,9 +1,9 @@
 # Taps
 tap "homebrew/core"
-tap "homebrew/bundle"
-tap "caskroom/drivers"
-tap "caskroom/fonts"
-tap "caskroom/cask"
+#tap "homebrew/bundle"
+#tap "homebrew/drivers"
+tap "homebrew/fonts"
+#tap "homebrew/cask"
 tap "bramstein/webfonttools"
 # Formulae
 # GNU core utilities (those that come with OS X are outdated)
@@ -12,10 +12,10 @@ brew "moreutils"
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew "findutils"
 # GNU `sed`, overwriting the built-in `sed`
-brew "gnu-sed", args:["with-default-names"]
-brew "imagemagick", args:["with-webp"]
-brew "ffmpeg", args:["with-libvpx"]
-brew "wget", args:["with-iri"]
+brew "gnu-sed"
+brew "imagemagick"
+brew "ffmpeg"
+brew "wget"
 brew "bash"
 brew "bash-completion2"
 brew "brew-cask-completion"
@@ -47,14 +47,13 @@ brew "sfnt2woff-zopfli"
 brew "woff2"
 brew "zsh"
 brew "zsh-syntax-highlighting"
-brew "zsh-autosuggestions"
+brew "fzf"
 
 # Cask apps
 cask_args appdir: "/Applications"
 cask "android-platform-tools"
 cask "alfred"
 cask "spectacle"
-cask "enpass"
 cask "google-chrome"
 cask "google-drive-file-stream"
 cask "google-backup-and-sync"
@@ -62,21 +61,15 @@ cask "firefox"
 cask "keepingyouawake"
 cask "docker"
 cask "iterm2"
-cask "notion"
 cask "keybase"
 cask "transmission"
 cask "gitkraken"
 cask "sensiblesidebuttons"
 cask "visual-studio-code"
 cask "slack"
-cask 'vagrant'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
 cask 'vlc'
-cask "whatsapp"
 cask "zoomus"
-cask "teamviewer"
-cask "hyper"
+cask "adguard"
 # Fonts
 cask "font-fira-code"
 cask "font-fira-mono"

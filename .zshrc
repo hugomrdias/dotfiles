@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git z yarn npm brew node vagrant)
+plugins=(git z yarn npm brew node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -26,7 +26,7 @@ fi
 # ALIASES
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; mas upgrade; brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor; yarn global upgrade --latest -s'
+alias update='sudo softwareupdate -i -a; mas upgrade; brew update; brew upgrade --force-bottle; brew cleanup; brew doctor; yarn global upgrade --latest -s'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -107,8 +107,9 @@ alias npm-links='npm ls -g --depth=0 --link=true'
 alias ipfs-local='/Users/hugomrdias/code/pl/js-ipfs/src/cli/bin.js'
 
 # To be able to install zsh-syntax-highlighting with brew this is needed
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
@@ -117,4 +118,8 @@ prompt pure
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
