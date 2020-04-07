@@ -1,5 +1,5 @@
 # PATH
-PATH="/usr/local/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="${HOME}/n/bin:/usr/local/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH="$PATH:~/bin"
 export PATH
 
