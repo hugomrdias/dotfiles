@@ -93,6 +93,8 @@ I actively watch the following repositories and add the best changes to this rep
 ```bash
 keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --import --allow-secret-key-import
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+gpgconf --kill gpg-agent
 ```
 
 ## License
