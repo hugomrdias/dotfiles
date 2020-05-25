@@ -1,10 +1,5 @@
 # Taps
-tap "homebrew/core"
-#tap "homebrew/bundle"
-#tap "homebrew/drivers"
-tap "homebrew/fonts"
-#tap "homebrew/cask"
-tap "bramstein/webfonttools"
+tap "homebrew/cask-fonts"
 # Formulae
 # GNU core utilities (those that come with OS X are outdated)
 brew "coreutils"
@@ -42,8 +37,6 @@ brew "ncdu" # find where your diskspace went
 brew "terminal-notifier"
 brew "rename"
 brew "ssh-copy-id"
-brew "sfnt2woff"
-brew "sfnt2woff-zopfli"
 brew "woff2"
 brew "zsh"
 brew "zsh-syntax-highlighting"

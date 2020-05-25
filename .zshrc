@@ -3,6 +3,7 @@ PATH="/usr/local/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/u
 PATH="$PATH:~/bin"
 export PATH
 
+export GPG_TTY=$(tty)
 export ZSH=~/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)

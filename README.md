@@ -84,6 +84,17 @@ I actively watch the following repositories and add the best changes to this rep
 -   [Jacob Gillespie’s dotfiles](https://github.com/jacobwg/dotfiles)
 -   [remy's cli improved](https://remysharp.com/2018/08/23/cli-improved)
 
+## Mac OS
+### Remove Siri from the touchbar
+- Keyboard preferences > Customise Control Strip 
+### Avoid delays in terminal cmds
+- Add iTerm to Security & Privacy > Privacy > Developer Tools 
+### Import gpg from keybase
+```bash
+keybase pgp export | gpg --import
+keybase pgp export --secret | gpg --import --allow-secret-key-import
+```
+
 ## License
 
 The code is available under the [MIT license](LICENSE).
