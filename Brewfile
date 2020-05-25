@@ -48,6 +48,8 @@ brew "woff2"
 brew "zsh"
 brew "zsh-syntax-highlighting"
 brew "fzf"
+brew "diff-so-fancy"
+brew "starship"
 
 # Cask apps
 cask_args appdir: "/Applications"
