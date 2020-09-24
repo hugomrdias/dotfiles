@@ -118,12 +118,12 @@ print_success() {
     printf "\e[0;32m [✔] $1\e[0m\n"
 }
 
-ask_for_confirmation "Warning: this will overwrite your current dotfiles. Continue?"
-if answer_is_yes; then
-    echo "";
-else
-    exit;
-fi
+# ask_for_confirmation "Warning: this will overwrite your current dotfiles. Continue?"
+# if answer_is_yes; then
+#     echo "";
+# else
+#     exit;
+# fi
 
 
 dir=~/dotfiles                        # dotfiles directory
@@ -152,10 +152,10 @@ declare -a FILES_TO_SYMLINK=(
     '.gitattributes'
     '.gitconfig'
     '.gitignore'
-    '.hushlogin'
-    '.macos'
-    '.hyper.js'
-    'Brewfile'
+    # '.hushlogin'
+    # '.macos'
+    # '.hyper.js'
+    # 'Brewfile'
     
 )
 
@@ -255,7 +255,7 @@ install_zsh () {
     fi
 }
 
-ask_for_sudo
+# ask_for_sudo
 install_zsh
 main
 
