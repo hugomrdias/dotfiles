@@ -12,6 +12,8 @@ plugins=(git z yarn npm brew node)
 
 source $ZSH/oh-my-zsh.sh
 
+[ -f ~/.profile ] && source ~/.profile
+
 # Source local extra (private) settings specific to machine if it exists
 [ -f ~/.zsh.local ] && source ~/.zsh.local
 
@@ -151,8 +153,17 @@ fshow_preview() {
 }
 
 
-# To be able to install zsh-syntax-highlighting with brew this is needed
-[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+user=$(whoami);
+# If the platform is github codespaces
+if [[ $user != 'codespace' ]]; then
+  [ -f /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  # To be able to install zsh-syntax-highlighting with brew this is needed
+  [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+# linunx
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

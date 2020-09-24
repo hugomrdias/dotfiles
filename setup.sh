@@ -152,6 +152,7 @@ declare -a FILES_TO_SYMLINK=(
     '.gitattributes'
     '.gitconfig'
     '.gitignore'
+    '.profile'
     # '.hushlogin'
     # '.macos'
     # '.hyper.js'
@@ -222,44 +223,51 @@ main() {
     #   unset BINARIES
 }
 
-install_zsh () {
-    # Test to see if zshell is installed.  If it is:
-    if [ -f /bin/zsh -o -f /usr/local/bin/zsh ]; then
-        # Install Oh My Zsh if it isn't already present
-        if [[ ! -d $dir/oh-my-zsh/ ]]; then
-            sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-        fi
-        # Set the default shell to zsh if it isn't currently set to zsh
-        if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-            chsh -s $(which zsh)
-        fi
-    else
-        # If zsh isn't installed, get the platform of the current machine
-        platform=$(uname);
-        # If the platform is Linux, try an apt-get to install zsh and then recurse
-        if [[ $platform == 'Linux' ]]; then
-            if [[ -f /etc/redhat-release ]]; then
-                sudo yum install zsh
-                install_zsh
-            fi
-            if [[ -f /etc/debian_version ]]; then
-                sudo apt-get install zsh
-                install_zsh
-            fi
-            # If the platform is OS X, tell the user to install zsh :)
-            elif [[ $platform == 'Darwin' ]]; then
-            echo "We'll install zsh, then re-run this script!"
-            brew install zsh
-            exit
-        fi
-    fi
-}
+user=$(whoami);
+platform=$(uname); # 'Linux' or 'Darwin'
 
-# ask_for_sudo
-install_zsh
+ask_for_sudo
+
+# Check for Homebrew
+print_info "Check for Homebrew"
+# Install if we don't have it
+if test ! $(which brew); then
+    print_info "Installing homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    print_success "done"
+else
+    print_success "Brew already installed"
+fi
+
+print_info "Install brew packages"
+brew install hub starship gh fzf ncdu ripgrep bat prettyping yarn nano bash bash-completion2 zsh zsh-syntax-highlighting diff-so-fancy
+print_success "done"
+
+print_info "Install yarn global packages"
+yarn global add trash-cli serve yo tldr @cloudflare/wrangler
+print_success "done"
+
+# install better nanorc config
+# https://github.com/scopatz/nanorc
+print_info 'Installing a better nano highlighting'
+curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
+print_success "done"
+
+# Stuff specific to github codespaces
+if [[ $user == 'codespace' ]]; then
+    # switch to brew zsh needs .profile to make zsh default shell
+    echo '/home/linuxbrew/.linuxbrew/bin/zsh' | sudo tee -a /etc/shells;
+else
+    # Switch to using brew-installed bash as default shell
+    if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
+        echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+        chsh -s /usr/local/bin/zsh;
+    fi;
+fi
+
+ # Install Oh My Zsh if it isn't already present
+if [[ ! -d ~/.oh-my-zsh/ ]]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 main
-
-# Reload zsh settings
-source ~/.zshrc
-
-# ./install.sh
