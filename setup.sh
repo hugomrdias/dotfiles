@@ -233,7 +233,12 @@ print_info "Check for Homebrew"
 # Install if we don't have it
 if test ! $(which brew); then
     print_info "Installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    if [[ $user == 'codespace' ]]; then
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    fi
+    brew update
+    brew upgrade
     print_success "done"
 else
     print_success "Brew already installed"
@@ -241,6 +246,7 @@ fi
 
 print_info "Install brew packages"
 brew install hub starship gh fzf ncdu ripgrep bat prettyping yarn nano bash bash-completion2 zsh zsh-syntax-highlighting diff-so-fancy
+brew cleanup
 print_success "done"
 
 print_info "Install yarn global packages"
@@ -256,7 +262,9 @@ print_success "done"
 # Stuff specific to github codespaces
 if [[ $user == 'codespace' ]]; then
     # switch to brew zsh needs .profile to make zsh default shell
-    echo '/home/linuxbrew/.linuxbrew/bin/zsh' | sudo tee -a /etc/shells;
+    if ! fgrep -q '/home/linuxbrew/.linuxbrew/bin/zsh' /etc/shells; then
+        echo '/home/linuxbrew/.linuxbrew/bin/zsh' | sudo tee -a /etc/shells;
+    fi;
 else
     # Switch to using brew-installed bash as default shell
     if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then

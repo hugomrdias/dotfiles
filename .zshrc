@@ -157,7 +157,7 @@ fshow_preview() {
 
 user=$(whoami);
 # If the platform is github codespaces
-if [[ $user != 'codespace' ]]; then
+if [[ $user == 'codespace' ]]; then
   [ -f /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   # To be able to install zsh-syntax-highlighting with brew this is needed
