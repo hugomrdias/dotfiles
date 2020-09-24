@@ -95,7 +95,7 @@ https://luispuerto.net/blog/2017/11/04/installing-pgp-signing-for-git-on-macos/
 
 ```bash
 keybase pgp export | gpg --import
-keybase pgp export --secret | gpg --import --allow-secret-key-import
+keybase pgp export --secret | gpg --import --allow-secret-key-import --no-tty --batch --yes
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 gpgconf --kill gpg-agent
 ```
