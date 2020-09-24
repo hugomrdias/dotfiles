@@ -89,7 +89,10 @@ I actively watch the following repositories and add the best changes to this rep
 - Keyboard preferences > Customise Control Strip 
 ### Avoid delays in terminal cmds
 - Add iTerm to Security & Privacy > Privacy > Developer Tools 
+
 ### Import gpg from keybase
+https://luispuerto.net/blog/2017/11/04/installing-pgp-signing-for-git-on-macos/
+
 ```bash
 keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --import --allow-secret-key-import

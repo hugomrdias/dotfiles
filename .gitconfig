@@ -127,3 +127,7 @@
 [include]
 
 	path = ~/.gitconfig.local
+[hub]
+	protocol = ssh
+[pull]
+	rebase = false
