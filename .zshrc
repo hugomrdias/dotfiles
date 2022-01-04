@@ -1,9 +1,19 @@
+export ANDROID_SDK_ROOT=/Users/hd/android-sdk
 # PATH
-PATH="/usr/local/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/usr/local/opt/gnupg@2.2/bin:/usr/local/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH="$PATH:~/bin"
+PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+PATH=$PATH:$ANDROID_SDK_ROOT/tools
+PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH
 
 export GPG_TTY=$(tty)
+# make sure ssh can see gpg
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+
 export ZSH=~/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -17,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 # Source local extra (private) settings specific to machine if it exists
 [ -f ~/.zsh.local ] && source ~/.zsh.local
 
+
 # EXPORTS
 
 # Preferred editor for local and remote sessions
@@ -29,14 +40,14 @@ fi
 # ALIASES
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; mas upgrade; brew update; brew upgrade --force-bottle; brew cleanup; brew doctor; yarn global upgrade --latest -s'
+alias update='sudo softwareupdate -i -a; mas upgrade; brew update; brew upgrade; brew cleanup; brew doctor; yarn global upgrade --latest -s; yarn cache clean'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl ipecho.net/plain; echo"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -93,9 +104,6 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias grep=rg
 
 alias tldr=man
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
