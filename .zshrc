@@ -18,7 +18,7 @@ export ZSH=~/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git z yarn npm brew node)
+plugins=(git brew node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,6 +38,9 @@ else
 fi
 
 # ALIASES
+
+# scrcpy into mobile
+alias mobile='scrcpy --tcpip=192.168.86.134:41453 -Sw --shortcut-mod=lalt'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; mas upgrade; brew update; brew upgrade; brew cleanup; brew doctor; yarn global upgrade --latest -s; yarn cache clean'
@@ -123,6 +126,8 @@ fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | gsed -r 's/ *[0-9]*\*? *//' | gsed -r 's/\\/\\\\/g')
 }
 
+
+# fbr - checkout git branch (including remote branches)
 fbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
@@ -173,6 +178,8 @@ else
 fi
 # linunx
 
+
+# run `$(brew --prefix)/opt/fzf/install`` to install key binding and get `.fzf.zsh`, check with `bindkey`
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # https://starship.rs/
@@ -180,6 +187,10 @@ eval "$(starship init zsh)"
 
 # githuh cli 
 eval "$(gh completion -s zsh)"
+
+# zoxide
+eval "$(zoxide init --cmd j zsh)"
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

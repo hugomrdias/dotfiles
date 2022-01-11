@@ -6,13 +6,13 @@ The setup script is smart enough to back up your existing dotfiles into a `~/dot
 
 ## Features
 
--   Handy [binary scripts](bin/)
--   Git aliases
--   zsh aliases
--   Brewfile
--   Sensible [OS X defaults](.macos)
--   [Install script](install.sh) to install everything brew, npm, etc..
--   [Setup script](setup.sh)
+- Handy [binary scripts](bin/)
+- Git aliases
+- zsh aliases
+- Brewfile
+- Sensible [OS X defaults](.macos)
+- [Install script](install.sh) to install everything brew, npm, etc..
+- [Setup script](setup.sh)
 
 ## Installation
 
@@ -74,23 +74,28 @@ My favorite part of this repo is the [.macos](.macos) script for OS X.
 
 I actively watch the following repositories and add the best changes to this repository:
 
--   [Setup Git GPG auto sign](https://gist.github.com/hugomrdias/0092a533d7bd87cadd0647f1985d6ca5)
--   [GitHub ❤ ~/](http://dotfiles.github.com/)
--   [Nick Plekhanov dotfiles](https://github.com/nicksp/dotfiles)
--   [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
--   [Nicolas Gallagher’s dotfiles](https://github.com/necolas/dotfiles)
--   [Cătălin’s dotfiles](https://github.com/alrra/dotfiles)
--   [Paul's dotfiles](https://github.com/paulirish/dotfiles)
--   [Jacob Gillespie’s dotfiles](https://github.com/jacobwg/dotfiles)
--   [remy's cli improved](https://remysharp.com/2018/08/23/cli-improved)
+- [Setup Git GPG auto sign](https://gist.github.com/hugomrdias/0092a533d7bd87cadd0647f1985d6ca5)
+- [GitHub ❤ ~/](https://dotfiles.github.io/)
+- [Nick Plekhanov dotfiles](https://github.com/nicksp/dotfiles)
+- [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [Nicolas Gallagher’s dotfiles](https://github.com/necolas/dotfiles)
+- [Cătălin’s dotfiles](https://github.com/alrra/dotfiles)
+- [Paul's dotfiles](https://github.com/paulirish/dotfiles)
+- [Jacob Gillespie’s dotfiles](https://github.com/jacobwg/dotfiles)
+- [remy's cli improved](https://remysharp.com/2018/08/23/cli-improved)
 
 ## Mac OS
+
 ### Remove Siri from the touchbar
-- Keyboard preferences > Customise Control Strip 
+
+- Keyboard preferences > Customise Control Strip
+
 ### Avoid delays in terminal cmds
-- Add iTerm to Security & Privacy > Privacy > Developer Tools 
+
+- Add iTerm to Security & Privacy > Privacy > Developer Tools
 
 ### Import gpg from keybase
+
 https://luispuerto.net/blog/2017/11/04/installing-pgp-signing-for-git-on-macos/
 
 ```bash

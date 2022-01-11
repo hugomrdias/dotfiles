@@ -245,12 +245,12 @@ else
 fi
 
 print_info "Install brew packages"
-brew install hub starship gh fzf ncdu ripgrep bat prettyping yarn nano bash bash-completion2 zsh zsh-syntax-highlighting diff-so-fancy
+brew install hub starship gh fzf ncdu ripgrep bat prettyping yarn nano bash bash-completion@2 zsh zsh-syntax-highlighting diff-so-fancy
 brew cleanup
 print_success "done"
 
 print_info "Install yarn global packages"
-yarn global add trash-cli serve yo tldr @cloudflare/wrangler
+yarn global add trash-cli serve npkill tldr @cloudflare/wrangler
 print_success "done"
 
 # install better nanorc config
@@ -267,9 +267,9 @@ if [[ $user == 'codespace' ]]; then
     fi;
 else
     # Switch to using brew-installed bash as default shell
-    if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-        echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-        chsh -s /usr/local/bin/zsh;
+    if ! fgrep -q '/opt/homebrew/bin/zsh' /etc/shells; then
+        echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells;
+        chsh -s /opt/homebrew/bin/zsh;
     fi;
 fi
 
