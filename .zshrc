@@ -1,11 +1,12 @@
-export ANDROID_SDK_ROOT=/Users/hd/android-sdk
+#export ANDROID_SDK_ROOT=/Users/hd/android-sdk
 # PATH
-PATH="/usr/local/opt/gnupg@2.2/bin:/usr/local/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH="$PATH:~/bin"
-PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-PATH=$PATH:$ANDROID_SDK_ROOT/tools
-PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+PATH="/opt/homebrew/opt/gnupg@2.2/bin:$PATH"
+#PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+#PATH=$PATH:$ANDROID_SDK_ROOT/tools
+#PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+#PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH
 
 export GPG_TTY=$(tty)
@@ -174,7 +175,7 @@ if [[ $user == 'codespace' ]]; then
   [ -f /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   # To be able to install zsh-syntax-highlighting with brew this is needed
-  [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 # linunx
 
@@ -189,8 +190,9 @@ eval "$(starship init zsh)"
 eval "$(gh completion -s zsh)"
 
 # zoxide
-eval "$(zoxide init --cmd j zsh)"
+eval "$(zoxide init zsh)"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

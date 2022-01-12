@@ -245,7 +245,7 @@ else
 fi
 
 print_info "Install brew packages"
-brew install hub starship gh fzf ncdu ripgrep bat prettyping yarn nano bash bash-completion@2 zsh zsh-syntax-highlighting diff-so-fancy
+brew install wget hub starship gh fzf ncdu ripgrep bat prettyping yarn nano bash bash-completion@2 zsh zsh-syntax-highlighting diff-so-fancy
 brew cleanup
 print_success "done"
 
