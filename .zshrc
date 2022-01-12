@@ -41,7 +41,7 @@ fi
 # ALIASES
 
 # scrcpy into mobile
-alias mobile='scrcpy --tcpip=192.168.86.134:41453 -Sw --shortcut-mod=lalt'
+alias mobile='scrcpy --tcpip=192.168.86.134:39741 -Sw --shortcut-mod=lalt'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; mas upgrade; brew update; brew upgrade; brew cleanup; brew doctor; yarn global upgrade --latest -s; yarn cache clean'
