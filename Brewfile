@@ -46,7 +46,7 @@ brew "diff-so-fancy"
 brew "starship"
 brew "scrcpy"
 brew "zoxide"
-brew "cloudflared"
+brew "cloudflare/cloudflare/cloudflared"
 brew "postgresql"
 
 # Cask apps
@@ -80,7 +80,7 @@ cask "zoom"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-fira-mono"
-cask "font-fira-mono-for-powerline"
+# cask "font-fira-mono-for-powerline"
 cask "font-fira-sans"
 # Quicklook
 cask "qlcolorcode" 

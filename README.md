@@ -66,9 +66,13 @@ as the `git` user credentials, e.g.:
   email = john@example.com
 ```
 
-## OS X Defaults
+## Sensible macOS Defaults
 
-My favorite part of this repo is the [.macos](.macos) script for OS X.
+My favorite part of this repo is the [.macos](.macos) script for macOS.
+
+```bash
+./.macos
+```
 
 ## Resources
 
