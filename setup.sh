@@ -236,6 +236,8 @@ if test ! $(which brew); then
     CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     if [[ $user == 'codespace' ]]; then
         eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    else
+        eval $(/opt/homebrew/bin/brew shellenv)
     fi
     brew update
     brew upgrade
