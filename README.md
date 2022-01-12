@@ -73,6 +73,11 @@ My favorite part of this repo is the [.macos](.macos) script for macOS.
 ```bash
 ./.macos
 ```
+## gpg and YubiKey
+- [Guide](https://github.com/drduh/YubiKey-Guide)
+- [gpg-agent.conf](https://github.com/drduh/YubiKey-Guide#create-configuration)
+- [gpg.conf](https://github.com/drduh/YubiKey-Guide#using-keys)
+  - uncomment `keyserver hkps://keys.openpgp.org` and run `gpg --recv <KEYID>`
 
 ## Resources
 
